@@ -237,7 +237,7 @@ export function GeneSequence({
               setHoverPosition(nucleotidePosition);
               setMousePosition({ x: e.clientX, y: e.clientY });
             }}
-            onMouseLeave={(e) => {
+            onMouseLeave={() => {
               setHoverPosition(null);
               setMousePosition(null);
             }}

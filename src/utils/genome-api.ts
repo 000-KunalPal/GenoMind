@@ -215,7 +215,7 @@ export async function fetchGeneDetails(geneId: string): Promise<{
     }
 
     return { geneDetails: null, geneBounds: null, initialRange: null };
-  } catch (err) {
+  } catch {
     return { geneDetails: null, geneBounds: null, initialRange: null };
   }
 }
@@ -249,7 +249,7 @@ export async function fetchGeneSequence(
     const sequence = data.dna.toUpperCase();
 
     return { sequence, actualRange };
-  } catch (err) {
+  } catch {
     return {
       sequence: "",
       actualRange: { start, end },

@@ -53,7 +53,7 @@ export default function HomePage() {
         if (data.genomes && data.genomes["Human"]) {
           setGenomes(data.genomes["Human"]);
         }
-      } catch (err) {
+      } catch {
         setError("Failed to load genome data");
       } finally {
         setIsLoading(false);
@@ -72,7 +72,7 @@ export default function HomePage() {
         if (data.chromosomes.length > 0) {
           setSelectedChromosome(data.chromosomes[0]!.name);
         }
-      } catch (err) {
+      } catch {
         setError("Failed to load chromosome data");
       } finally {
         setIsLoading(false);
@@ -92,8 +92,8 @@ export default function HomePage() {
       const results = filterFn ? data.results.filter(filterFn) : data.results;
 
       setSearchResults(results);
-    } catch (err) {
-      setError("Faield to search genes");
+    } catch {
+      setError("Failed to search genes");
     } finally {
       setIsLoading(false);
     }
@@ -152,7 +152,7 @@ export default function HomePage() {
           <div className='flex items-center gap-3'>
             <div className='relative'>
               <h1 className='text-xl font-light tracking-wide text-[#3c4f3d]'>
-                <span className='font-normal'>EVO</span>
+                <span className='font-normal'>GenoMind</span>
                 <span className='text-[#de8246]'>2</span>
               </h1>
               <div className='absolute -bottom-1 left-0 h-[2px] w-12 bg-[#de8246]'></div>
