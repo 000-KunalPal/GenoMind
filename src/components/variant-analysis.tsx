@@ -373,4 +373,7 @@ const VariantAnalysis = forwardRef<VariantAnalysisHandle, VariantAnalysisProps>(
   }
 );
 
+// Add display name to fix the ESLint error
+VariantAnalysis.displayName = "VariantAnalysis";
+
 export default VariantAnalysis;
